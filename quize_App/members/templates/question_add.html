@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Addition</title>
+    <style>
+        label{
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        input{
+            border: none;
+            width:40%;
+            height:30px;
+            border-radius: 5px;
+            background: rgb(120, 233, 233);
+        }
+        .q{
+            height:40px;
+            margin-left: 15px;
+        }
+        .h{
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        #question{
+            color: blue;
+        }
+        .correct{
+            margin-left: 15px;
+        }
+        #click{
+            border-radius: 4px;
+            background: #7ad95d;
+            text-align:center;
+            width: 80px;
+            box-shadow: 5px 3px 5px #412ce0;
+            margin-left: 17%;
+        }
+        .messagefail{
+            background: #f09c9c;
+            color: #d2280d;
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .messagesuccess{
+            background: #a3ee74;
+            color: #02971d;
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% include 'header2.html' %}
+    <br>
+    <div class="messagefail"></div>
+    <div class="messagesuccess">{{succ}}</div>
+    <form action="{{path_question}}" method="POST">
+        {% csrf_token %}
+        <label for="question">Enter the questions :-</label></br><br>
+        <input class="q" name="ques" type="text" placeholder="Enter question" required></br></br>
+        <span class="h">Enter the Options :-</span><br><br>
+        <label for="option 1">1. </label><input type="text" name="o1" required></br><br>
+        <label for="option 2">2. </label><input type="text" name="o2" required></br><br>
+        <label for="option 3">3. </label><input type="text" name="o3" required></br><br>
+        <label for="option 4">4. </label><input type="text" name="o4" required></br><br>
+        <label for="correct">Correct Answer From the Given options</label><br><br>
+        <input class="correct" name="Correct" type="text" placeholder="Correction Answer" required><br><br>
+        <button type="submit" id="click" >ADD</button><br><br>
+
+    </form>
+    {% include 'footer.html' %}
+</body>
+</html>

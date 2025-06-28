@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quize App</title>
+    {% load static %}
+    <script src="{% static 'js/python.js' %}"></script>
+    <style>
+        button{
+            background: rgb(21, 227, 21);
+            border-radius: 5px;
+        }
+        #questions{
+            padding:5%;
+        }
+        button:hover{
+            transform: scale(1.03);
+        }
+        button:active{
+            transform: scale(1);
+        }
+        .texts{
+            text-align: center;
+            font-weight: bolder;
+        }
+        .nav10{
+            width:20%;
+            height:40px;
+            text-align: center;
+            float:left;
+            font-weight: bold;
+            background: rgb(112, 212, 242);
+            border:none;
+            box-shadow: 2px 2px 2px black;
+            border-radius: 0px;
+            
+        }
+        .nav10:active{
+            background: white;
+        }
+        #home{
+            text-decoration: underline;
+            background: white;
+        }
+        .result_card{
+            height:400px;
+            position:absolute;
+            width:300px;
+            background:rgba(245, 241, 241, 0.8);
+            right: 8%;
+            top:40%;
+            display:none;
+            border: 1px double black;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        .rem{
+            position:absolute;
+            top:0;
+            right: 0;
+            background: rgb(251, 36, 36);
+            color: white;
+        }
+    </style>
+</head>
+<body onload="Python();move();">
+    {% include 'heander.html' %}
+    <p class="texts"></br>Welcome to Page, You can start practising your knowledge here.</p>
+    <div class="subjects">
+        <button class="nav10" onclick="Python()">Python</button>
+        <button class="nav10" onclick="Java()">Java</button>
+        <button class="nav10" onclick="Clang()">C - Language</button>
+        <button class="nav10" onclick="Sql()">SQL</button>
+        <button class="nav10" onclick="dsa()">DSA</button><br/>
+    </div>
+    <div class="result_card"></div>
+    <div id="questions">
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

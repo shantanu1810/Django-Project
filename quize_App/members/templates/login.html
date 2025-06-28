@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signing in</title>
+    <style>
+        html,body{
+    height:100%;
+    background: linear-gradient(rgb(253, 251, 251),rgb(97, 143, 196));
+}
+html{
+    display: table;
+    margin:auto;
+    padding-top: 50px;
+}
+.header{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+.block1{
+    border:1px solid black;
+    margin:20px;
+    padding:20px;
+    border-radius: 20px;
+    background:white;
+}
+.outer{
+    border:1px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px #454444;
+    background: white;
+}
+input{
+    outline: none;
+    border:none;
+}
+#click:hover{
+    transform: scale(1.06);
+}
+.block1:hover{
+    transform: scale(1.06);
+}
+#click:active{
+    transform: scale(1);
+}
+.block2{
+    padding:15px;
+    font-weight: bolder;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color:blue;
+    
+}
+#click{
+    width:90px;
+    margin-left:120px;
+    margin-right:70px;
+    height:40px;
+    font-size: 15px;
+    border:1px solid black;
+    border-radius: 20px;
+    color:white;
+    background: linear-gradient(rgb(96, 99, 235),rgb(16, 77, 208));
+}
+.fail{
+    background: #ee9d9d;
+    color: rgb(148, 8, 8);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.success{
+    background: #a0ee9d;
+    color: rgb(24, 100, 5);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 16px;
+    border-radius: 5px;
+}
+    </style>
+    {% load static %}
+</head>
+<body>
+    <div class="success">{{success}}</div>
+    <div class="fail">{{fail}}</div>
+    <div class="outer">
+        <div class="header"><img src="{% static 'images/lg.png' %}" height="100%" width="60%"></div>
+        <form action="/login/" method="POST">
+            {% csrf_token %}
+        <div class="block1"><div >User-name</div>
+            <div>
+                <input class="b" type="text" name="username" required>
+            </div>
+        </div>
+        <div class="block1"><div>Password</div>
+            <div>
+                <input class="b" type="password" name="password" required>
+            </div>
+        </div>
+        <button type="submit" id="click" style="text-align:center;box-shadow: 5px 3px 5px #888888;">Login</button>
+    </form>
+        <div class="block2"><a href="/signin" style="padding-left: 20px;">Sign in</a><a href="/forgetpassword" style="margin-left: 110px;">Forget Password?</a></div>
+        <a href="/" style="padding-left: 140px;font-weight: bolder;">Back</a>
+    </div>
+</body>
+</html>

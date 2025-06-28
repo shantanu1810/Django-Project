@@ -1,0 +1,79 @@
+<style>
+    html,body{
+    height:100%;
+    background: rgb(230, 243, 242);
+    }
+    .name{
+        height: 40px;
+        width: 15%;
+        font-weight: bold;
+        align-items: center;
+        text-align: left;
+    }
+    .Heading{
+        font-size: 20px;
+        font-weight: bold;
+        height:30px;
+        width:75%;
+        overflow: hidden;
+        color: rgb(0,0,0);
+        padding-top: 10px;
+        float:left;
+    }
+    .box{
+        float: left;
+        background:rgba(0,255,0,1);
+    }
+    .outer{
+        width:100%;
+    }
+    a{
+        width:10%;
+        text-decoration: none;
+        color:black;
+    }
+    .nav{
+        width:33.333333%;
+        font-weight: bold;
+        float:left;
+        text-align: center;
+        padding-top:5px;
+        padding-bottom:5px;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    a:hover{
+        color:blue;
+        text-decoration:underline;
+    }
+    .sign{
+        height: 40px;
+        background: #afededcc;
+        width: 10%;
+        border-radius: 5px;
+        border:none;
+        box-shadow: 2px 0px 2px black;
+        text-shadow: 0.5px 0.5px 0.5px black;
+    }
+    .movehead{
+        height:100%;
+        width: 100%;
+        position: relative;
+        left: 100%;
+    }
+</style>
+{% block content %}
+{% load static %}
+<div class="outer">
+    <div class="name box"><img src="{% static 'images/lg.png' %}" height="40px" width="80px"></div>
+    <div class="Heading box"><div class="movehead">Welcome to My Page</div></div>
+    <a href="/signin"><button class="sign">Sign in</button></a>
+</div>
+    <div class="navigate">
+        <div class="nav" id="home"><a href="/">Home</a></div>
+        <div class="nav" id="about"><a href="/about">About</a></div>
+        <div class="nav" id="know"><a href="/knowledge">Knowledge</a></div>
+    </div>
+
+
+{% endblock content %}

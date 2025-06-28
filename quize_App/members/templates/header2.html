@@ -1,0 +1,135 @@
+<style>
+    .homeblock{
+        height:300px;
+        width:260px;
+        border-radius: 10px;
+        position:absolute;
+        right:10px;
+        top:50px;
+        background-color: white;
+        display:none;
+    }
+    html,body{
+        height:100%;
+        background: rgb(230, 243, 242);
+    }
+    .name{
+        height: 40px;
+        width: 15%;
+        font-weight: bold;
+        align-items: center;
+        text-align: left;
+    }
+    .Heading{
+        font-size: 20px;
+        font-weight: bold;
+        height:30px;
+        width:75%;
+        align-items: center;
+        text-align: center;
+        color: rgb(13, 8, 1);
+        
+        padding-top: 10px;
+        float:left;
+    }
+    .box{
+        float: left;
+        background: #4ce131;
+    }
+    .outer{
+        width:100%;
+        background: #4ce131;
+    }
+    .btn{
+        height: 40px;
+        background: #c7c5c7cc;
+        width: 10%;
+        border-radius: 5px;
+        border:none;
+        box-shadow: 2px 0px 2px black;
+        text-shadow: 0.5px 0.5px 0.5px black;
+    }
+    .btn:hover{
+        transform: scale(1.05);
+    }
+    .btn:active{
+        transform: scale(1.0);
+    }
+    .directions:hover{
+        transform: scale(1.02);
+    }
+    .directions{
+        font-weight: bolder;
+        width:260px;
+        height: 35px;
+        background: white;
+        border:none;
+        text-align: left;
+    }
+    .out{
+        color:red;
+        font-size: 15px;
+        font-weight: bold;
+        width:260px;
+        height: 45px;
+        background: white;
+        border:none;
+    }
+    .out:hover{
+        color:blue;
+    }
+    .userbox{
+            height:40px;
+            width:40px;
+            overflow: hidden;
+            float:left;
+        }
+        .body{
+            height: 60%;
+            width:60%;
+            background: #060606;
+            position: relative;
+            top:50%;
+            left:15%;
+            border-radius: 40%;
+            border: 4px solid white;
+        }
+        .head{
+            height:40%;
+            width:40%;
+            background: #000;
+            position: relative;
+            bottom:70%;
+            left:25%;
+            border: 4px solid white;
+            border-radius: 50%;
+        }
+        .directions:active{
+            transform: scale(1);
+        }
+</style>
+{% load static %}
+<script src="{% static 'js/home.js' %}"></script>
+<div class="outer">
+    <div class="name box"><img src="{% static 'images/lg.png' %}"height="40px" width="80px"></div>
+    <div class="Heading box">Knowledge Building with Quize</div>
+    <button class="btn" onclick="block()">&#9776;</button>
+    <div class="homeblock">
+        <div style="padding-top:10px;">
+            <div class="userbox">
+                <div class="body">
+                </div>
+                <div class="head"></div>
+            </div><div style="padding-top: 20px;font-size: 20px;">{{user.user_Name}}</div>
+            </div>
+        <hr/>
+        <a href="{{path_home}}"><button class="directions" id="home">Home</button></a>
+        <a href="{{path_details}}"><button class="directions" id="details">Details</button>
+        <a href="{{path_mark}}"><button class="directions" id="marks">Marks</button></a>
+        <a href="{{path_question}}"><button class="directions" id="question">Questions Addition</button></a>
+        <button class="directions" id="board">Leader Board</button>
+        <hr/>
+        <a href="/"><button class="out">Log Out</button></a>
+
+    </div>
+</div>

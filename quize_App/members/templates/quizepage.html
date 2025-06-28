@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quize Page</title>
+    <style>
+        .textm{
+            text-align: center;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        .btnh{
+            width:50%;
+            float: left;
+            border:none;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            background: rgb(79, 177, 242);
+        }
+        #t{
+            background: white;
+        }
+        .he{
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .ready{
+            background: blue;
+            color: white;
+            height: 40px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px grey;
+        }
+        .block{
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .ready:active{
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% include 'header2.html' %}
+    <h3 style="text-align: center;">Welcome <span style="color:rgb(72, 0, 255)">{{user.user_Name}}</span> you can learn many topics from here.</h3>
+    <a href="{{path_home}}"><button class="btnh">Learning</button></a>
+    <a href="{{path_quizes}}"><button class="btnh" id="t">Quize Practicing</button></a><br><br>
+    <div class="textm">On clicking the start button you will start the quize from where you till completed </div><br><br>
+    <div class="block">Start Quize <a href="{{path_quizestart}}"><button class="ready">Ready for Quize</button></a></div><br><br>
+    {% include 'footer.html' %}
+</body>
+</html>

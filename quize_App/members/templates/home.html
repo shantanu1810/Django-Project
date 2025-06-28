@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        #home{
+            color:blue;
+        }
+        .navhom{
+            border:none;
+            float:left;
+            width:50%;
+            height:20px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            text-align: center;
+            background: rgb(79, 177, 242);
+            border-radius: 0px;
+        }
+        button:active{
+            transform: scale(0.96);
+        }
+        button{
+            border:none;
+            border-radius: 5px;
+            background: rgb(230, 243, 242);
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% include 'header2.html' %}
+    <div>
+        <h3 style="text-align: center;">Welcome <span style="color:rgb(72, 0, 255)">{{user.user_Name}}</span> you can learn many topics from here.</h3>
+        <a href="{{path_home}}"><button class="navhom" style="background: white;">Learning</button></a>
+        <a href="{{path_quize}}"><button class="navhom">Quize Practicing</button></a>
+    </div>
+    <div><br/>
+        <div style="text-align: center;font-size: 18px;font-weight: bold;margin: 20px;border: 2px solid blue;">Here are some technical topics you can start learning from now.</div>
+        <button style="padding:30px;" class="topic"><img src="{% static 'images/python.png' %}" height="150px" width="150px"><BR/><span style="font-weight: bolder;">PYTHON</span></button>
+        <button style="padding:30px;" class="topic"><img src="{% static 'images/java.jpeg' %}" height="150px" width="150px"><BR/><span style="font-weight: bolder;">JAVA</span></button>
+        <button style="padding:30px;" class="topic"><img src="{% static 'images/CLanguage.png' %}" height="150px" width="150px"><BR/><span style="font-weight: bolder;">C - Language</span></button>
+        <button style="padding:30px;" class="topic"><img src="{% static 'images/dbms.png' %}" height="150px" width="150px"><BR/><span style="font-weight: bolder;">DataBase Management System(DBMS)</span></button>
+        <button style="padding:30px;" class="topic"><img src="{% static 'images/dsa.png' %}" height="150px" width="150px"><BR/><span style="font-weight: bolder;">Data Structure and Algorithms</span></button>
+        <button style="padding:30px;" class="topic"><img src="{% static 'images/sql.png' %}" height="150px" width="150px"><BR/><span style="font-weight: bolder;">Structural Query language</span></button>
+        <button style="padding:30px;" class="topic"><img src="{% static 'images/ml.png' %}" height="150px" width="150px"><BR/><span style="font-weight: bolder;">Machine Learning</span></button>
+        <button style="padding:30px;" class="topic"><img src="{% static 'images/ai.jpeg' %}" height="150px" width="150px"><BR/><span style="font-weight: bolder;">Artificial Intelligence</span></button>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

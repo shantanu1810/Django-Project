@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signing in</title>
+    <style>
+        html,body{
+    height:100%;
+    background: linear-gradient(rgb(253, 251, 251),rgb(97, 143, 196));
+}
+html{
+    display: table;
+    margin:auto;
+    padding-top: 50px;
+}
+.header{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+.block1{
+    border:1px solid black;
+    margin:20px;
+    padding:20px;
+    border-radius: 20px;
+    background:white;
+}
+.outer{
+    border:1px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px #454444;
+    background: white;
+}
+input{
+    outline: none;
+    border:none;
+}
+#click:hover{
+    transform: scale(1.06);
+}
+.block1:hover{
+    transform: scale(1.06);
+}
+#click:active{
+    transform: scale(1);
+}
+.block2{
+    padding:15px;
+    padding-left: 30px;
+    font-weight: bolder;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color:blue;
+    
+}
+#click{
+    width:90px;
+    margin-left:100px;
+    margin-right:70px;
+    height:40px;
+    font-size: 15px;
+    border:1px solid black;
+    border-radius: 20px;
+    color:white;
+    background: linear-gradient(rgb(96, 99, 235),rgb(16, 77, 208));
+}
+.message{
+    width:290px;
+    font-size: 17px;
+    background: #e9a6a6;
+    color: rgb(148, 8, 8);
+    text-align: center;
+    border-radius: 3px;
+}
+    </style>
+    <script>
+        function show(){
+            const v=document.getElementsByClassName('b')[1];
+            const s=document.getElementsByClassName('show')[0];
+            if(s.innerHTML==="show"){
+                s.innerHTML="Hide";
+                v.type="text";
+            }else{
+                s.innerHTML="show";
+                v.type="password";
+            }
+        }
+    </script>
+{% load static %}
+</head>
+<body>
+    <div class="message">{{message}}</div>
+    <div class="outer">
+        <div class="header"><img src="{% static 'images/lg.png' %}" height="100%" width="60%"></div>
+        <form action="/signin/" method="POST">
+        {% csrf_token %}
+        <div class="block1"><div >User-Name</div>
+            <div>
+                <input class="b" type="text" placeholder="username" name="username" required>
+            </div>
+        </div>
+        <div class="block1"><div>Password</div>
+            <div>
+                <input class="b" type="password" placeholder="**********" name="password" required><spam type="show" class="show" onclick="show()">show</span>
+            </div>
+        </div>
+        <button type="submit" id="click" style="text-align:center;box-shadow: 5px 3px 5px #888888;">Sign in</button>
+    </form>
+        <div class="block2">Already have an account?<a href="/login" style="padding-left: 2px;">Login</a><br/><br/><a href="/" style="padding-left: 90px;">Back</a></div>
+    </div>
+</body>
+</html>

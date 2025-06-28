@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Scored</title>
+    <style>
+        #marks_display{
+            border: 2px solid blue;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            padding:30px;
+            color: rgb(191, 33, 33);
+        }
+        #mark{
+            color: rgb(11, 24, 133);
+        }
+        #marks{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% include 'header2.html' %}
+    <div  id="marks_display">
+        <span>Total Marks Score - </span><span id="mark">{{user.totalmark}}</span>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

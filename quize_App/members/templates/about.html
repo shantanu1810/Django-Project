@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <title>Quize-about</title>
+    {% load static %}
+    <script src="{% static 'js/python.js' %}"></script>
+    <style>
+        #about{
+            text-decoration: underline;
+            background: white;
+        }
+        .img_head{
+            margin-top: -120px;
+            margin-bottom: 70px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 40px;
+            color:white;
+        }
+        .textfield{
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body onload="move();">
+    {% include 'heander.html' %}
+    <img src="{% static 'images/quize_bg.jpeg' %}" height="200px" width="100%">
+    <div class="img_head">ABOUT US</div>
+    <div>
+        <div style="text-align: center;font-size: 20px;">This is a basic quize page you can practice <strong>Technical Quizes or Questions</strong> here. </div>
+        <br><div class="textfield">Quiz App Name is a fun and engaging way to test your knowledge on a variety of topics. Whether you're a student looking to review your coursework or just a trivia enthusiast, our app offers a wide range of quizzes to challenge and entertain
+            <br> You can also test your knowledge here and become a prefession in technology.
+        </div><br>
+        <div>
+            Features of quize app
+            <ul>
+                <li>Multiple-choice, true/false, and fill-in-the-blank question formats</li>
+                <li>Progress tracking and leaderboards to motivate users</li>
+                <li>Manage the time so to complete the quize on time</li>
+            </ul>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

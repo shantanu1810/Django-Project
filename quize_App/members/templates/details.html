@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Details</title>
+    <style>
+        .details_form{
+            height:300px;
+            padding:20px;
+            border:4px solid blue;
+            border-radius: 10px;
+            align-items:center;
+            box-shadow: 5px 3px 5px #412ce0;
+            text-shadow: 0.3px 1px 1px #412ce0;
+        }
+        .name2{
+            float:left;
+            width:100%;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #details{
+            color:blue;
+        }
+        input{
+            background: rgb(179, 229, 235);
+            border:none;
+            width: 70%;
+            height: 20px;
+        }
+        #click{
+            text-align:center;
+            box-shadow: 5px 3px 5px #412ce0;
+            margin-left: 30%;
+            margin-top: 1%;
+            background: #49da3e;
+            height:30px;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% include 'header2.html' %}
+    <div class="details_form">
+        <form action="{{path_details}}" method="POST">
+        {% csrf_token %}
+        <span style="font-size: 18px;">User - Name -- </span><span style="font-weight: bolder;font-size:18px;">{{user.user_Name}}</span><br><br/>
+        <div class="name2">First Name<br> 
+        <input type="text" value="{{user.firstname}}" name="firstname"><br/>
+        </div>
+        <div class="name2">Middle Name<br>
+        <input type="text" value="{{user.middlename}}" namme="middlename"><br/>
+        </div>
+        <div class="name2">Last Name<br>
+        <input type="text" value="{{user.lastname}}" name="lastname"><br>
+        </div>
+        <div class="name2">Phone Number<br>
+        <input type="text" value="{{user.phone}}" name="phonenumber"><br>
+        </div>
+        <div class="name2">Email<br>
+        <input type="text" value="{{user.email}}" name="email"><br>
+        </div>
+        <button type="submit" id="click" >SAVE</button>
+        </form>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
